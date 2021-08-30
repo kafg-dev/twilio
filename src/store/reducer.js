@@ -6,6 +6,7 @@ const initState = {
     connectOnlyWithAudio:false,
     roomId:null,
     twilioAccessToken:null,
+    showOverlay: true
 };
 
 const reducer = (state = initState, action) => {
@@ -34,6 +35,11 @@ const reducer = (state = initState, action) => {
         return {
           ...state,
           twilioAccessToken:action.token
+        }
+      case Actions.SET_SHOW_OVERLAY:
+        return{
+          ...state,
+          showOverlay:action.showOverlay
         }
       default:
           return state; 
